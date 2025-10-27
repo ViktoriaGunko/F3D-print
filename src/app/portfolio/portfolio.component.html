@@ -1,0 +1,26 @@
+<div class="container-fluid container-custom py-5 text-center">
+  <h2 class="fw-bold mb-4">Приклади виконаних замовлень</h2>
+
+  <div class="container">
+    <div class="row g-2 g-sm-3 justify-content-center">
+      <div
+        *ngFor="let img of images"
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
+      >
+        <div class="gallery-item position-relative overflow-hidden rounded shadow-sm">
+          <img [src]="img.src" alt="Приклад роботи" class="img-fluid w-100 h-100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4" *ngIf="moreImages.length > 0">
+      <button class="btn btn-dark d-inline-flex align-items-center" (click)="showMore()">
+        Переглянути ще
+        <img
+          src="../../assets/images/icon_buttons/Vector.png"
+          class="ms-3 rounded-1 bg-light p-2"
+        />
+      </button>
+    </div>
+  </div>
+</div>

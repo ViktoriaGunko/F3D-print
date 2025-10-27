@@ -1,0 +1,57 @@
+
+.container-custom {
+  width: 91.6667%; /* ~col-11 */
+  max-width: 1140px; /* приблизно col-lg-9 */
+  margin: 0 auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+//.step-card {
+//  background-color: #7D95961A;
+//}
+
+.row {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+/* Картинки та кнопки */
+img.object-fit-cover {
+  object-fit: cover;
+}
+
+.btn-custom {
+  background: #415050;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-custom2 {
+  color: #415050;
+  background: #F1F1F1;
+}
+.btn-custom:hover {
+  transform: scale(1.03);
+}
+.btn-custom2:hover {
+  transform: scale(1.03);
+}
+.btn-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .container-custom {
+    width: 95%;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}

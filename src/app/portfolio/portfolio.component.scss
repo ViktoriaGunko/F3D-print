@@ -1,0 +1,88 @@
+.container-custom {
+  width: 91.6667%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+}
+
+.gallery-item {
+  background: #bdbdbd;
+  height: 220px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Відступи між рядами */
+.row.g-2 {
+  row-gap: 0.75rem;
+}
+
+/* Адаптація для планшетів */
+@media (max-width: 992px) {
+  .gallery-item {
+    height: 200px;
+  }
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 768px) {
+  .gallery-item {
+    height: 180px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button.btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* 📱 Для дуже маленьких екранів */
+@media (max-width: 576px) {
+  .gallery-item {
+    height: 160px;
+    width: 60%; /* 🔹 зображення не на всю ширину */
+    margin: 0 auto; /* центруємо */
+  }
+
+  .container-custom {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  img.btn-icon2,
+  img.ms-3 {
+    width: 14px;
+    height: 14px;
+    padding: 0.25rem;
+  }
+}
+
+.btn-dark {
+  background-color: #415050 !important;
+  border-color: #415050 !important;
+
+  &:hover {
+    background-color: darken(#415050, 5%) !important;
+  }
+}

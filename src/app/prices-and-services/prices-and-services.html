@@ -1,0 +1,65 @@
+<section class="container prices mt-4">
+  <h1 class="text-center mb-5 fw-bold">Ціни на послуги</h1>
+
+  <!-- Ціни на друк -->
+  <h2 class="fw-semibold mb-3 ms-5">Ціни на друк</h2>
+
+  <!-- Стандартні матеріали -->
+  <h3 class="fw-normal mb-3 ms-5">Стандартні матеріали</h3>
+  <div class="row gy-4 justify-content-center">
+    <div class="col-6 col-md-4 col-lg-2" *ngFor="let item of standardMaterials">
+      <div class="card text-center border-0 shadow-sm h-100">
+        <img [src]="item.image" class="img-fluid p-2 rounded-4" alt="{{ item.title }}">
+        <div class="card-body p-2">
+          <h5 class="card-title fs-6 fw-semibold mb-1">{{ item.title }}</h5>
+          <p class="card-text small text-muted mb-0">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Гнучкі матеріали -->
+  <h3 class="fw-normal mt-5 mb-3 ms-5">Гнучкі матеріали</h3>
+  <div class="row gy-4 justify-content-center">
+    <div class="col-6 col-md-4 col-lg-2" *ngFor="let item of flexibleMaterials">
+      <div class="card text-center border-0 shadow-sm h-100">
+        <img [src]="item.image" class="img-fluid p-2 rounded-4" alt="{{ item.title }}">
+        <div class="card-body p-2">
+          <h5 class="card-title fs-6 fw-semibold mb-1">{{ item.title }}</h5>
+          <p class="card-text small text-muted mb-0">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Надміцні матеріали -->
+  <h3 class="fw-normal mt-5 mb-3 ms-5">Надміцні матеріали</h3>
+  <div class="row gy-4 justify-content-center">
+    <div class="col-6 col-md-4 col-lg-2" *ngFor="let item of strongMaterials">
+      <div class="card text-center border-0 shadow-sm h-100">
+        <img [src]="item.image" class="img-fluid p-2 rounded-4" alt="{{ item.title }}">
+        <div class="card-body p-2">
+          <h5 class="card-title fs-6 fw-semibold mb-1">{{ item.title }}</h5>
+          <p class="card-text small text-muted mb-0">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Інші послуги -->
+  <h2 class="fw-semibold mt-5 mb-3 ms-5">Ціни на інші послуги</h2>
+  <div class="row gy-4 justify-content-center">
+    <div class="col-6 col-md-4 col-lg-2" *ngFor="let item of otherServices">
+      <div class="card text-center border-0 shadow-sm h-100">
+        <img [src]="item.image" class="img-fluid p-2 rounded-4" alt="{{ item.title }}">
+        <div class="card-body p-2 d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title fs-6 fw-semibold mb-1">{{ item.title }}</h5>
+            <p class="card-text small text-muted mb-1">{{ item.description }}</p>
+          </div>
+          <p class="fw-bold mb-0">{{ item.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

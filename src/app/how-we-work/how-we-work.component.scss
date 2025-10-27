@@ -1,0 +1,54 @@
+.how-we-work-section {
+  .steps-svg-wrapper {
+    display: flex;
+    justify-content: center;
+    .steps-svg {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .btn-custom {
+    background-color: #415050;
+    border-color: #415050;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(#415050, 5%);
+      border-color: darken(#415050, 5%);
+    }
+  }
+  .step-card {
+    background-color: #7D95961A !important;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+    max-width: 200px;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    p {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .steps-svg-wrapper {
+      margin-bottom: 2rem;
+      svg {
+        width: 100%;
+      }
+    }
+
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-card {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+}

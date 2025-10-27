@@ -1,0 +1,106 @@
+.nav-link {
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+.btn-outline-dark:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Лінії */
+.custom-header::before,
+.custom-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1.5px;
+  background-color: #a3a3a3;
+  width: 43%;
+}
+
+.custom-header::before { left: 0; }
+.custom-header::after { right: 0; }
+
+/* ======= АДАПТИВ ======= */
+@media (max-width: 767.98px) {
+  .custom-header::before,
+  .custom-header::after {
+    display: none;
+  }
+
+  .burger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .burger-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 2px;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    color: #fff;
+    padding: 0.5rem 0;
+  }
+}
+
+
+//.nav-link {
+//  font-weight: 500;
+//  transition: 0.2s;
+//}
+//
+//.nav-link:hover {
+//  color: #0d6efd;
+//}
+//
+//.btn-outline-dark:hover {
+//  background-color: #000;
+//  color: #fff;
+//}
+//
+//.custom-header::before,
+//.custom-header::after {
+//  content: "";
+//  position: absolute;
+//  bottom: 0;
+//  height: 1.5px;
+//  background-color: #a3a3a3; /* колір лінії */
+//  width: 43%; /* довжина лінії з кожного боку */
+//}
+//
+//.custom-header::before {
+//  left: 0;
+//}
+//
+//.custom-header::after {
+//  right: 0;
+//}

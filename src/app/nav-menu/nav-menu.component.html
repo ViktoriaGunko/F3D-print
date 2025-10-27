@@ -1,0 +1,62 @@
+<header class="custom-header position-relative pt-3 pb-2">
+  <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-xl-5">
+
+    <!-- Навігація (великий екран) -->
+    <nav class="d-none d-lg-flex col-lg-5 gap-4 gap-xl-5 justify-content-start">
+      <a routerLink="/" fragment="hero" class="nav-link text-dark fw-medium" (click)="closeOffcanvas()">Про нас</a>
+      <a  routerLink="/" fragment="services" class="nav-link text-dark fw-medium"(click)="closeOffcanvas()">Послуги</a>
+      <a routerLink="/" fragment="prices-and-services" class="nav-link text-dark fw-medium"(click)="closeOffcanvas()">Ціни</a>
+      <a routerLink="/" fragment="footer" class="nav-link text-dark fw-medium"(click)="closeOffcanvas()">Контакти</a>
+    </nav>
+
+    <!-- Логотип (тільки на великих екранах) -->
+    <div class="logo d-none d-lg-flex position-absolute start-50 translate-middle-x flex-column align-items-center">
+      <a href="/">
+        <img src="assets/images/logo.png" alt="3D-print" width="90">
+      </a>
+    </div>
+
+    <!-- Кнопка (великий екран) -->
+    <button class="btn order-btn d-none d-lg-flex align-items-center gap-2 px-4 py-2 rounded-3 fw-semibold">
+      Зробити замовлення
+      <img src="../../assets/images/icon_buttons/icons-btn.png" alt="icon" width="18">
+    </button>
+
+    <!-- Верхня панель (малий екран) -->
+    <div class="d-flex d-lg-none align-items-center w-100 justify-content-between">
+      <!-- Логотип зліва -->
+      <a href="/" class="d-flex align-items-center">
+        <img src="assets/images/logo.png" alt="3D-print" width="70">
+      </a>
+
+      <!-- Кнопка та бургер справа -->
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn order-btn-sm d-flex align-items-center gap-2 px-3 py-2 rounded-3 fw-semibold">
+          Зробити замовлення
+          <img src="../../assets/images/icon_buttons/icons-btn.png" alt="icon" width="16">
+        </button>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas меню -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-white">Меню</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column align-items-start gap-3">
+      <a routerLink="/" fragment="hero" class="nav-link text-white fw-medium" (click)="closeOffcanvas()">Про нас</a>
+      <a routerLink="/" fragment="services" class="nav-link text-white fw-medium" (click)="closeOffcanvas()">Послуги</a>
+      <a routerLink="/" fragment="prices-and-services" class="nav-link text-white fw-medium" (click)="closeOffcanvas()">Ціни</a>
+      <a routerLink="/" fragment="footer" class="nav-link text-white fw-medium" (click)="closeOffcanvas()">Контакти</a>
+    </div>
+
+
+
+  </div>
+</header>

@@ -1,0 +1,79 @@
+.hero-image {
+  position: relative;
+  background-color: #ccc;
+  height: 500px;
+
+  img {
+    object-fit: cover;
+   // height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media (max-width: 576px) {
+    height: 240px;
+  }
+}
+.hero-custom {
+  background: #7D95961A!important;
+
+}
+.btn-custom{
+  color: #415050;
+}
+.btn-custom2 {
+  background: #415050;
+  color: white;
+}
+.btn-custom:hover {
+  transform: scale(1.03);
+}
+.btn-custom2:hover {
+  transform: scale(1.03);
+}
+.slider {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+/* Текстовий блок займає половину ширини та 40% висоти */
+.hero-text-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Заголовок не переноситься */
+//.hero-text-box h3 {
+//  white-space: nowrap;
+//}
+
+.btn-icon{
+  width: 26px;
+  height: 26px;
+}
+btn-icon2{
+  width: 26px;
+  height: 26px;
+}
+
+/* Текстовий блок адаптивно розширюється на малих екранах */
+@media (max-width: 768px) {
+  .hero-text-box {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-text-box {
+    width: 90%;
+    height: auto;
+  }
+}

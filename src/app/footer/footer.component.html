@@ -1,0 +1,107 @@
+<footer class="bg-dark text-light pt-5 pb-4 border-top border-secondary">
+  <div class="container">
+    <div class="row gy-4">
+      <!-- Контакти -->
+      <div class="col-lg-4 col-md-6">
+        <h5 class="text-center mb-3">Наші контакти</h5>
+        <ul class="list-unstyled">
+          <li class="d-flex align-items-center mb-3">
+            <img src="assets/images/footer-icon/icon11.png" alt="phone" class="icon-img me-3" />
+            +380 77 710 11 00
+          </li>
+          <li class="d-flex align-items-center mb-3">
+            <img src="assets/images/footer-icon/icon2.png" alt="telegram" class="icon-img me-3" />
+            @f3dprcc
+          </li>
+          <li class="d-flex align-items-center mb-3">
+            <img src="assets/images/footer-icon/icon3.png" alt="instagram" class="icon-img me-3" />
+            F3D-PRO
+          </li>
+          <li class="d-flex align-items-center">
+            <img src="assets/images/footer-icon/icon4.png" alt="collective" class="icon-img me-3" />
+            F3D-PR0
+          </li>
+        </ul>
+      </div>
+
+      <!-- Форма -->
+      <div class="col-lg-4 col-md-6">
+        <h5 class="text-center mb-3 text-custom">Зворотній зв’язок</h5>
+        <form (ngSubmit)="sendMessage()" #contactForm="ngForm" class="d-flex flex-column gap-2 custom-form">
+          <div class="form-group">
+            <label for="name">Як до вас звертатися?</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              name="name"
+              [(ngModel)]="form.name"
+              placeholder="Ім’я"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Ваш контактний телефон</label>
+            <input
+              type="tel"
+              id="phone"
+              class="form-control"
+              name="phone"
+              [(ngModel)]="form.phone"
+              placeholder="+380 ХХ ХХХ ХХ ХХ"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email для зворотного зв’язку</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="form.email"
+              placeholder="example@email.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Ваш коментар</label>
+            <textarea
+              id="comment"
+              class="form-control"
+              name="comment"
+              [(ngModel)]="form.comment"
+              rows="3"
+              placeholder="Що ви хочете запитати?"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-dark d-flex justify-content-between align-items-center mt-3">
+            Надіслати звернення
+            <img src="assets/images/footer-icon/icon5.png" alt="send" class="ms-3 rounded-1 bg-light p-1" />
+          </button>
+        </form>
+      </div>
+
+      <!-- Карта -->
+      <div class="col-lg-4 col-12">
+        <h5 class="text-center mb-3">Можете знайти нас тут</h5>
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe
+            src="https://www.google.com/maps?q=Київ,+вулиця+Костянтинівська,+71&output=embed"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="d-flex align-items-center justify-content-center">
+          <img src="assets/images/footer-icon/icon6.png" alt="map" class="icon-img icon-imgg me-2" />
+          Київ, вулиця Костянтинівська, 71
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

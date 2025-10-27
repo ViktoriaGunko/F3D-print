@@ -1,0 +1,67 @@
+footer {
+  font-family: 'Inter', sans-serif;
+
+  .icon-img {
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 6px;
+    padding: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+  }
+  .icon-imgg {
+    width: 26px;
+    height: 33px;
+  }
+  input,
+  textarea {
+    transition: all 0.3s;
+    &:focus {
+      background-color: #2c2c2c;
+      border-color: #aaa;
+    }
+  }
+
+  .btn-dark {
+    background-color: #415050 !important;
+    border-color: #415050 !important;
+    margin-left: 75px;
+    width: 55%;
+    border: 1px solid white !important;
+
+    &:hover {
+      background-color: darken(#415050, 5%) !important;
+    }
+  }
+  .custom-form,
+  .custom-form label,
+  .custom-form input,
+  .custom-form textarea {
+    color: #F1F1F1 !important;
+  }
+
+  .custom-form input,
+  .custom-form textarea {
+    background-color: #212529;
+    border: 2px solid #415050 !important;
+  }
+
+  .custom-form input::placeholder,
+  .custom-form textarea::placeholder {
+    color: #cfcfcf;
+  }
+
+  .text-custom {
+    color: #F1F1F1;
+  }
+
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}

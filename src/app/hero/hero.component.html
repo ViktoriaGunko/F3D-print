@@ -1,0 +1,46 @@
+<section class="container-fluid py-5 hero">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center mb-4">
+      <h1 class="fw-bold hero-title">Втілюємо ваші мрії</h1>
+    </div>
+
+    <!-- Слайдер -->
+    <div class="col-11 slider col-md-10 col-lg-9 position-relative p-0 hero-image rounded overflow-hidden shadow">
+      <img [src]="currentImage" alt="Hero image" class="img-fluid w-100">
+
+      <!-- Текстовий блок -->
+      <div
+        class="col-xl-2 hero-custom hero-text-box bg-opacity-75 rounded-3 p-3 p-sm-4 position-absolute bottom-0 end-0 m-3"
+      >
+        <h3 class="fw-semibold mb-2 text-nowrap">F3D – ваша 3D-майстерня</h3>
+        <p class="small mb-3">
+          Наша команда експертів перетворює ваші ідеї в реальність. <br>
+          Ми пропонуємо: точне <strong>3D-моделювання</strong>, <strong>3D-сканування</strong>,
+          <strong>послуги високоякісного 3D-друку</strong> будь-якої складності.<br> Довіряйте свій проект професіоналам!
+        </p>
+        <div class="row g-2">
+          <div class="col-12  col-sm-6 d-flex">
+            <button class="btn-custom border border-#415050 border-3 rounded-3 w-100  d-flex justify-content-between align-items-center fw-500">Отримати консультацію
+            <img src="../../assets/images/icon_buttons/get_consultation.png" class="btn-icon">
+            </button>
+          </div>
+          <div class="col-12 col-sm-6">
+            <button class=" btn btn-custom2 w-100  rounded-3 d-flex justify-content-between align-items-center fw-500">Замовити друк
+              <img src="../../assets/images/icon_buttons/order_printing.png" class="btn-icon">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Кнопки перемикання -->
+      <div class="position-absolute bottom-0 start-0 m-3 d-flex gap-3">
+        <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="prevImage()">
+          <img src="../../assets/images/icon_buttons/left.png" class="btn-icon2">
+        </button>
+        <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="nextImage()">
+          <img src="../../assets/images/icon_buttons/right.png" class="btn-icon2">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
