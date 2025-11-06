@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {HomeComponent} from "./home/home.component";
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import {PortfolioComponent} from "./portfolio/portfolio.component";
@@ -8,7 +9,7 @@ import {PricesAndServicesComponent} from "./prices-and-services/prices-and-servi
 import {HowWeWorkComponent} from "./how-we-work/how-we-work.component";
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'pricing', component: PricesAndServicesComponent },
@@ -17,8 +18,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    anchorScrolling: 'enabled', // ✅ дозволяє скрол до якорів
-    scrollPositionRestoration: 'enabled'
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'disabled',
   })],
   exports: [RouterModule]
 })

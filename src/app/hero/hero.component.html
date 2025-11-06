@@ -19,13 +19,18 @@
           <strong>послуги високоякісного 3D-друку</strong> будь-якої складності.<br> Довіряйте свій проект професіоналам!
         </p>
         <div class="row g-2">
-          <div class="col-12  col-sm-6 d-flex">
-            <button class="btn-custom border border-#415050 border-3 rounded-3 w-100  d-flex justify-content-between align-items-center fw-500">Отримати консультацію
-            <img src="../../assets/images/icon_buttons/get_consultation.png" class="btn-icon">
+          <div class="col-12 col-sm-6 d-flex">
+            <button class="btn-custom border border-#415050 border-3 rounded-3 w-100 d-flex justify-content-between align-items-center fw-500"
+                    (click)="openOrder('3D друк')">
+              Отримати консультацію
+              <img src="../../assets/images/icon_buttons/get_consultation.png" class="btn-icon">
             </button>
           </div>
+
           <div class="col-12 col-sm-6">
-            <button class=" btn btn-custom2 w-100  rounded-3 d-flex justify-content-between align-items-center fw-500">Замовити друк
+            <button class=" btn btn-custom2 w-100  rounded-3 d-flex justify-content-between align-items-center fw-500"
+                    (click)="openOrder('3D друк')">
+              Замовити друк
               <img src="../../assets/images/icon_buttons/order_printing.png" class="btn-icon">
             </button>
           </div>
@@ -37,7 +42,7 @@
         <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="prevImage()">
           <img src="../../assets/images/icon_buttons/left.png" class="btn-icon2">
         </button>
-        <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="nextImage()">
+        <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="nextImage()" (click)="openOrder('3D друк')">
           <img src="../../assets/images/icon_buttons/right.png" class="btn-icon2">
         </button>
       </div>
