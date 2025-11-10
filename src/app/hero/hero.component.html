@@ -5,12 +5,12 @@
     </div>
 
     <!-- Слайдер -->
-    <div class="col-11 slider col-md-10 col-lg-9 position-relative p-0 hero-image rounded overflow-hidden shadow">
+    <div class="col-11 hero-custom slider col-md-10 col-lg-9 position-relative p-0 hero-image rounded overflow-hidden shadow">
       <img [src]="currentImage" alt="Hero image" class="img-fluid w-100">
 
       <!-- Текстовий блок -->
       <div
-        class="col-xl-2 hero-custom hero-text-box bg-opacity-75 rounded-3 p-3 p-sm-4 position-absolute bottom-0 end-0 m-3"
+        class="col-xl-2  hero-text-box bg-opacity-75 rounded-3 p-3 p-sm-4 position-absolute bottom-0 end-0 m-3"
       >
         <h3 class="fw-semibold mb-2 text-nowrap">F3D – ваша 3D-майстерня</h3>
         <p class="small mb-3">
@@ -42,7 +42,7 @@
         <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="prevImage()">
           <img src="../../assets/images/icon_buttons/left.png" class="btn-icon2">
         </button>
-        <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="nextImage()" (click)="openOrder('3D друк')">
+        <button class="btn btn-light shadow-sm px-2.5 py-2" (click)="nextImage()">
           <img src="../../assets/images/icon_buttons/right.png" class="btn-icon2">
         </button>
       </div>
