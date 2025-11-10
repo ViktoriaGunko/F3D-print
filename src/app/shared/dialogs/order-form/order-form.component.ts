@@ -19,19 +19,17 @@ export class OrderFormComponent {
     private dialogRef: MatDialogRef<OrderFormComponent>,
     private smtpService: SmtpService
   ) {
-    // ✅ Створення реактивної форми
     this.form = this.fb.group({
       name: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', [Validators.email]],
-      service: [data?.serviceType || '', Validators.required],
+      service: [data?.serviceType || ''],
       comment: [''],
       fileName: [''],
-      personalData: [false, Validators.requiredTrue]
+      personalData: ['']
     });
   }
 
-  // ✅ Обробка вибору файлу
   onFileSelect(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
@@ -41,8 +39,8 @@ export class OrderFormComponent {
     }
   }
 
-  // ✅ Надсилання форми
   submitForm() {
+    console.log('this.form.invalid', this.form.invalid)
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -51,7 +49,7 @@ export class OrderFormComponent {
     const formData = {
       ...this.form.value,
       serviceType: this.data?.serviceType,
-      fileName: this.fileName
+      // fileName: this.fileName
     };
 
     this.smtpService.submitForm(formData);

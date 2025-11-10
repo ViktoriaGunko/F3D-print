@@ -1,17 +1,13 @@
-// smtp.service.ts
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({ providedIn: 'root' })
 export class SmtpService {
-  // ← ВСТАВ СВІЙ ПОВНИЙ API КЛЮЧ ТУТ
   private apiKey = 'ADB1D7525C1FEAF61F08749D35E1C40AD9715834B81496DA0327198734DDA2219C692B0CDC62A18E58132BD659EE1440';
 
   constructor(private snackBar: MatSnackBar) {}
 
-  // Використовуй async/await для читабельності
   async submitForm(formData: any) {
-    // Побудова тіла у форматі, який очікує Elastic Email v4
     const payload = {
       Recipients: [
         { Email: 'f3dprintwork@gmail.com' } // отримувач(і)

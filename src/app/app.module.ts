@@ -14,7 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 // Компоненти
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { HeroComponent } from './hero/hero.component';
+import { SliderComponent } from './slider/slider.component';
 import { ServicesComponent } from './services/services.component';
 import { HowWeWorkComponent } from './how-we-work/how-we-work.component';
 import { PricesAndServicesComponent } from './prices-and-services/prices-and-services.component';
@@ -33,7 +33,7 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeroComponent,
+    SliderComponent,
     ServicesComponent,
     HowWeWorkComponent,
     PricesAndServicesComponent,

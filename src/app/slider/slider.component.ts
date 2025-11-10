@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { DialogService } from '../shared/services/dialog.service'; // перевір, що файл реально тут
-import { OrderFormComponent } from '../shared/dialogs/order-form/order-form.component'; // правильний шлях до OrderFormComponent
+import { DialogService } from '../shared/services/dialog.service';
+import { OrderFormComponent } from '../shared/dialogs/order-form/order-form.component';
 
 @Component({
-  selector: 'app-hero',
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.scss']
 })
-export class HeroComponent {
+export class SliderComponent {
 
   constructor(private dialogService: DialogService) {}
 
   openOrder(serviceType: string) {
+    console.log('openOrder', serviceType)
     this.dialogService.openDialog(OrderFormComponent, {
       data: {
         title: `Заявка на ${serviceType}`,
