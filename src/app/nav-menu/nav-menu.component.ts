@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import {DialogService} from "../shared/services/dialog.service";
+import {OrderFormComponent} from "../shared/dialogs/order-form/order-form.component";
 
 declare var bootstrap: any;
 
@@ -9,13 +11,23 @@ declare var bootstrap: any;
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.scss']
 })
+
 export class NavMenuComponent implements OnInit {
   private currentFragment: string | null = null;
+  constructor(private router: Router, private dialogService: DialogService) {}
 
-  constructor(private router: Router) {}
-
+  openOrder(serviceType: string) {
+    console.log('openOrder', serviceType)
+    this.dialogService.openDialog(OrderFormComponent, {
+      data: {
+        title: `Заявка на ${serviceType}`,
+        serviceType: serviceType,
+        applyButtonText: 'Надіслати заявку'
+      },
+      panelClass: 'custom-dialog'
+    });
+  }
   ngOnInit() {
-    // Слухаємо зміну маршруту
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -26,10 +38,9 @@ export class NavMenuComponent implements OnInit {
       });
   }
 
+
   async scrollToSection(fragment: string, closeMenu: boolean = false) {
     this.currentFragment = fragment;
-
-    // Якщо вже на головній сторінці
     const currentUrl = this.router.url.split('#')[0];
     if (currentUrl === '/') {
       this.scrollSmoothly(fragment);
@@ -37,7 +48,6 @@ export class NavMenuComponent implements OnInit {
       await this.router.navigate(['/'], { fragment });
     }
 
-    // Закриваємо offcanvas (на мобільному)
     if (closeMenu) {
       const offcanvasElement = document.getElementById('mobileMenu');
       if (offcanvasElement) {

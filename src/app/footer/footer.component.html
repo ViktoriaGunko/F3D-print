@@ -1,9 +1,8 @@
 <footer class="bg-dark text-light pt-5 pb-4 border-top border-secondary">
   <div class="container">
     <div class="row gy-4">
-      <!-- Контакти -->
       <div class="col-lg-4 col-md-6">
-        <h5 class="text-center mb-3">Наші контакти</h5>
+        <h2 class="text-center mb-3">Наші контакти</h2>
         <ul class="list-unstyled">
           <li class="d-flex align-items-center mb-3">
             <img src="assets/images/footer-icon/icon11.png" alt="phone" class="icon-img me-3" />
@@ -23,11 +22,13 @@
           </li>
         </ul>
       </div>
-
-      <!-- Форма -->
       <div class="col-lg-4 col-md-6">
-        <h5 class="text-center mb-3 text-custom">Зворотній зв’язок</h5>
-        <form (ngSubmit)="sendMessage()" #contactForm="ngForm" class="d-flex flex-column gap-2 custom-form">
+        <h2 class="text-center mb-3 text-custom">Зворотній зв’язок</h2>
+        <form
+          (ngSubmit)="sendMessage(contactForm)"
+          #contactForm="ngForm"
+          class="d-flex flex-column gap-2 custom-form">
+
           <div class="form-group">
             <label for="name">Як до вас звертатися?</label>
             <input
@@ -38,7 +39,11 @@
               [(ngModel)]="form.name"
               placeholder="Ім’я"
               required
-            />
+              #nameModel="ngModel"/>
+
+            <div *ngIf="submitted && nameModel.invalid" class="text-danger small mt-1">
+              Введіть ваше ім’я
+            </div>
           </div>
 
           <div class="form-group">
@@ -51,7 +56,11 @@
               [(ngModel)]="form.phone"
               placeholder="+380 ХХ ХХХ ХХ ХХ"
               required
-            />
+              #phoneModel="ngModel"/>
+
+            <div *ngIf="submitted && phoneModel.invalid" class="text-danger small mt-1">
+              Введіть телефон
+            </div>
           </div>
 
           <div class="form-group">
@@ -64,7 +73,12 @@
               [(ngModel)]="form.email"
               placeholder="example@email.com"
               required
-            />
+              email
+              #emailModel="ngModel"/>
+
+            <div *ngIf="submitted && emailModel.invalid" class="text-danger small mt-1">
+              Введіть коректний email
+            </div>
           </div>
 
           <div class="form-group">
@@ -77,19 +91,23 @@
               rows="3"
               placeholder="Що ви хочете запитати?"
               required
-            ></textarea>
+              #commentModel="ngModel"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-dark d-flex justify-content-between align-items-center mt-3">
+          <button
+            type="submit"
+            class="btn btn-dark d-flex justify-content-between align-items-center mt-3">
             Надіслати звернення
-            <img src="assets/images/footer-icon/icon5.png" alt="send" class="ms-3 rounded-1 bg-light p-1" />
+            <img
+              src="assets/images/footer-icon/icon5.png"
+              alt="send"
+              class="ms-3 rounded-1 bg-light p-1"/>
           </button>
         </form>
       </div>
 
-      <!-- Карта -->
       <div class="col-lg-4 col-12">
-        <h5 class="text-center mb-3">Можете знайти нас тут</h5>
+        <h2 class="text-center mb-3">Можете знайти нас тут</h2>
         <div class="ratio ratio-16x9 mb-3">
           <iframe
             src="https://www.google.com/maps?q=Київ,+вулиця+Костянтинівська,+71&output=embed"
@@ -98,7 +116,7 @@
           ></iframe>
         </div>
         <p class="d-flex align-items-center justify-content-center">
-          <img src="assets/images/footer-icon/icon6.png" alt="map" class="icon-img icon-imgg me-2" />
+          <img src="assets/images/footer-icon/icon6.png" alt="map" class="icon-img icon-imgg me-2"/>
           Київ, вулиця Костянтинівська, 71
         </p>
       </div>

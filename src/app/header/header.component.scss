@@ -12,7 +12,6 @@
   color: #fff;
 }
 
-/* Лінії */
 .custom-header::before,
 .custom-header::after {
   content: "";
@@ -26,7 +25,6 @@
 .custom-header::before { left: 0; }
 .custom-header::after { right: 0; }
 
-/* ======= АДАПТИВ ======= */
 @media (max-width: 767.98px) {
   .custom-header::before,
   .custom-header::after {
@@ -72,35 +70,3 @@
   }
 }
 
-
-//.nav-link {
-//  font-weight: 500;
-//  transition: 0.2s;
-//}
-//
-//.nav-link:hover {
-//  color: #0d6efd;
-//}
-//
-//.btn-outline-dark:hover {
-//  background-color: #000;
-//  color: #fff;
-//}
-//
-//.custom-header::before,
-//.custom-header::after {
-//  content: "";
-//  position: absolute;
-//  bottom: 0;
-//  height: 1.5px;
-//  background-color: #a3a3a3; /* колір лінії */
-//  width: 43%; /* довжина лінії з кожного боку */
-//}
-//
-//.custom-header::before {
-//  left: 0;
-//}
-//
-//.custom-header::after {
-//  right: 0;
-//}

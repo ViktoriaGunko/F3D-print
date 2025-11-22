@@ -28,20 +28,16 @@
     opacity: 0.9;
   }
 }
-
-/* Відступи між рядами */
 .row.g-2 {
   row-gap: 0.75rem;
 }
 
-/* Адаптація для планшетів */
 @media (max-width: 992px) {
   .gallery-item {
     height: 200px;
   }
 }
 
-/* Адаптація для мобільних */
 @media (max-width: 768px) {
   .gallery-item {
     height: 180px;
@@ -57,12 +53,11 @@
   }
 }
 
-/* 📱 Для дуже маленьких екранів */
 @media (max-width: 576px) {
   .gallery-item {
     height: 160px;
-    width: 60%; /* 🔹 зображення не на всю ширину */
-    margin: 0 auto; /* центруємо */
+    width: 60%;
+    margin: 0 auto;
   }
 
   .container-custom {

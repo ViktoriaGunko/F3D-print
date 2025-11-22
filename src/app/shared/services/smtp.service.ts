@@ -10,10 +10,10 @@ export class SmtpService {
   async submitForm(formData: any) {
     const payload = {
       Recipients: [
-        { Email: 'f3dprintwork@gmail.com' } // отримувач(і)
+        { Email: 'f3dprintwork@gmail.com' }
       ],
       Content: {
-        From: 'f3dprintwork@gmail.com', // має бути verified
+        From: 'f3dprintwork@gmail.com',
         Subject: `Нове замовлення: ${formData.service || '—'}`,
         Body: [
           {
@@ -26,7 +26,6 @@ export class SmtpService {
               <p><b>Email:</b> ${this.escape(formData.email) || '—'}</p>
               <p><b>Тип послуги:</b> ${this.escape(formData.service) || '—'}</p>
               <p><b>Коментар:</b> ${this.escape(formData.comment) || '—'}</p>
-              <p><b>Файл:</b> ${this.escape(formData.fileName) || '—'}</p>
             `
           }
         ]
@@ -34,31 +33,25 @@ export class SmtpService {
     };
 
     try {
-      // Відправка запиту
       const res = await fetch('https://api.elasticemail.com/v4/emails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // заголовок із API ключем (назва нечутлива до регістру)
           'X-ElasticEmail-ApiKey': this.apiKey
         },
         body: JSON.stringify(payload)
       });
 
-      // Спроба прочитати тіло відповіді (API часто повертає JSON з поясненням помилки)
       const text = await res.text();
       let json: any = null;
       try { json = text ? JSON.parse(text) : null; } catch { /* не JSON */ }
 
       if (!res.ok) {
-        // Покажи в консоль деталі — це допоможе діагностувати 400
         console.error('Elastic Email responded with error:', res.status, res.statusText, json ?? text);
-        // Показуємо користувачу просте повідомлення, в консоль — деталі
         this.snackBar.open('❌ Помилка при відправленні (див. консоль)', 'OK', { duration: 5000 });
         return;
       }
 
-      // Успіх
       console.log('Elastic Email response:', json ?? text);
       this.snackBar.open('✅ Форма успішно відправлена!', 'OK', { duration: 3000 });
     } catch (err) {
@@ -67,7 +60,6 @@ export class SmtpService {
     }
   }
 
-  // Невеликий escape для вставки в HTML (базово)
   private escape(input: any) {
     if (input == null) return '';
     return String(input)

@@ -1,7 +1,5 @@
 <section class="how-we-work-section container text-center">
   <h2 class="fw-bold mb-5">Як ми працюємо ?</h2>
-
-  <!-- SVG-лінія з фігурками -->
   <div class="steps-svg-wrapper mb-5">
     <svg width="1140" height="88" viewBox="0 0 1140 88" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="100" y="38" width="235" height="10" rx="5" fill="#7D9596"/>
@@ -72,26 +70,21 @@
 
   </div>
 
-  <!-- Картки -->
   <div class="row justify-content-center g-4">
     <div
       class="col-12 col-md-6 col-lg-2"
-      *ngFor="let step of steps"
-    >
+      *ngFor="let step of steps">
       <div class="step-card p-4 rounded-4 shadow-sm mx-auto h-100">
         <div class="step-icon mb-3">
-          <!--  іконка -->
           <img [src]="step.icon" alt="icon" class="img-fluid mx-auto d-block" width="60" height="60">
         </div>
         <p class="small fw-medium">{{ step.text }}</p>
       </div>
     </div>
   </div>
-
-  <!-- CTA -->
   <div class="cta mt-5">
     <p class="fw-semibold mb-3">Тепер готові до втілення ідеї?<br>Зробіть замовлення!</p>
-    <button class="btn btn-custom gap-2 rounded-3 px-4 py-2 d-inline-flex align-items-center w-semibold">
+    <button class="btn btn-custom gap-2 rounded-3 px-4 py-2 d-inline-flex align-items-center w-semibold" (click)="openOrder('3D друк')">
       Зробити замовлення
       <img src="../../assets/images/icon_buttons/icons-btn.png" alt="icon" width="21">
     </button>

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import {OrderFormComponent} from "../shared/dialogs/order-form/order-form.component";
+import {DialogService} from "../shared/services/dialog.service";
 
 interface ServiceButton {
   label: string;
   type: string;
-  icon?: string; // ← додаємо опціональне поле
+  icon?: string;
 }
 
 interface Service {
@@ -19,6 +21,20 @@ interface Service {
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
+
+  constructor(private dialogService: DialogService) {
+  }
+  openOrder(serviceType: string) {
+    console.log('openOrder', serviceType)
+    this.dialogService.openDialog(OrderFormComponent, {
+      data: {
+        title: `Заявка на ${serviceType}`,
+        serviceType: serviceType,
+        applyButtonText: 'Надіслати заявку'
+      },
+      panelClass: 'custom-dialog'
+    });
+  }
   services: Service[] = [
     {
       title: '3D Друк',

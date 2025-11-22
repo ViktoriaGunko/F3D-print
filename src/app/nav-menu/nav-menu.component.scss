@@ -1,14 +1,27 @@
-/* Загальні стилі */
-.nav-link {
-  font-weight: 500;
-  transition: 0.2s;
+.custom-a {
+  position: relative;
+  color: #1d1d1d;
+  transition: color 0.1s ease;
 }
 
-.nav-link:hover {
-  color: #0d6efd;
+.custom-a:hover {
+  color: #415050;
+}
+.custom-a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #415050;
+  transition: width 0.3s ease;
 }
 
-/* Лінії по боках */
+.custom-a:hover::after {
+  width: 100%;
+}
+
 .custom-header::before,
 .custom-header::after {
   content: "";
@@ -40,7 +53,6 @@
   color: #fff;
 }
 
-/* Малий екран */
 @media (max-width: 991.98px) {
   .custom-header {
     background-color: #7D959633;

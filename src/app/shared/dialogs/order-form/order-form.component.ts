@@ -25,27 +25,15 @@ export class OrderFormComponent {
       email: ['', [Validators.email]],
       service: [data?.serviceType || ''],
       comment: [''],
-      fileName: [''],
       personalData: ['']
     });
   }
-
-  onFileSelect(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      this.selectedFile = input.files[0];
-      this.fileName = this.selectedFile.name;
-      this.form.patchValue({ fileName: this.fileName });
-    }
-  }
-
   submitForm() {
     console.log('this.form.invalid', this.form.invalid)
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
-
     const formData = {
       ...this.form.value,
       serviceType: this.data?.serviceType,

@@ -9,9 +9,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { OrderFormComponent } from './dialogs/order-form/order-form.component';
 
+
 @NgModule({
   declarations: [
-    OrderFormComponent
+    OrderFormComponent,
+
   ],
   imports: [
     CommonModule,
